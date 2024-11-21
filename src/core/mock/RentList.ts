@@ -11,19 +11,51 @@ export interface RentService {
 export const ServiceList_: RentService[] = [
     {
         pk : 1,
-        title : 'mock1',
-        icon : '',
-        price : '1',
-        description : 'test1',
-        status : 'staus'
+        title : 'Электроэнергия',
+        icon : 'https://cs6.pikabu.ru/post_img/2015/07/04/10/1436029898_1190099444.jpg',
+        price : '3 ₽/кВт*ч',
+        description : 'Не забывайте оплачивать услуги ЖКХ',
+        status : 'Active'
     },
     {
         pk : 2,
-        title : 'mock2',
-        icon : '',
-        price : '2',
-        description : 'test2',
-        status : 'staus'
+        title : 'Холодное водоснабжение',
+        icon : 'https://cs6.pikabu.ru/post_img/2015/07/04/10/1436029898_1190099444.jpg',
+        price : '37 ₽/м3',
+        description : 'Не забывайте оплачивать услуги ЖКХ',
+        status : 'Active'
+    },
+    {
+        pk : 3,
+        title : 'Горячее водоснабжение',
+        icon : 'https://cs6.pikabu.ru/post_img/2015/07/04/10/1436029898_1190099444.jpg',
+        price : '240 ₽/м3',
+        description : 'Не забывайте оплачивать услуги ЖКХ',
+        status : 'Active'
+    },
+    {
+        pk : 4,
+        title : 'Обслуживание домофона',
+        icon : 'https://cs6.pikabu.ru/post_img/2015/07/04/10/1436029898_1190099444.jpg',
+        price : '55 ₽/мес',
+        description : 'Не забывайте оплачивать услуги ЖКХ',
+        status : 'Active'
+    },
+    {
+        pk : 5,
+        title : 'Интернет',
+        icon : 'https://cs6.pikabu.ru/post_img/2015/07/04/10/1436029898_1190099444.jpg',
+        price : '900 ₽/мес',
+        description : 'Не забывайте оплачивать услуги ЖКХ',
+        status : 'Active'
+    },
+    {
+        pk : 6,
+        title : 'Уход за придомовой территорией',
+        icon : 'https://cs6.pikabu.ru/post_img/2015/07/04/10/1436029898_1190099444.jpg',
+        price : '150 ₽/мес',
+        description : 'Не забывайте оплачивать услуги ЖКХ',
+        status : 'Active'
     },
 
 ]

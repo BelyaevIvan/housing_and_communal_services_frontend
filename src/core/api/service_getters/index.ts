@@ -1,19 +1,20 @@
 import {sendRequest} from "../index.ts";
 import {ServiceListResponse, RentService} from "./typing.ts";
-export const getServiceList = async (searchTitle?: string, priceFilter? : Number) => {
+export const getServiceList = async (searchTitle?: string, priceFilter?: number) => {
     try {
-        const params: {[key: string]: any} = {};
-    
-    if (searchTitle) {
-            params.q = searchTitle;
+        const params = new URLSearchParams();
+
+        if (searchTitle) {
+            params.append("title", searchTitle);
         }
 
- 
-    
+        if (priceFilter !== undefined) {
+            params.append("min_price", String(priceFilter));
+        }
+
         const response: ServiceListResponse = await sendRequest({
             method: "GET",
-            path: "/rent_services/",
-            params: Object.keys(params).length > 0 ? params : undefined,
+            path: `/rent_services/?${params.toString()}`,
         });
         return response;
 
@@ -22,6 +23,7 @@ export const getServiceList = async (searchTitle?: string, priceFilter? : Number
         throw error;
     }
 };
+
 
 export const getService = async (id : string) => {
     try{

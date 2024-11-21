@@ -4,7 +4,7 @@ import { IRequestOptions } from "./typing";
 export const BASE_URL = "/api";
 export const sendRequest = async (options: IRequestOptions) => {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 2000);
+    const timeoutId = setTimeout(() => controller.abort(), 1000);
     const {
         method,
         path,

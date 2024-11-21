@@ -12,10 +12,6 @@ export const MainPage: FC = () => {
 
             <div className="welcome-section">
                 <p className="welcome-text">Добро пожаловать на наш сайт! Мы предлагаем услуги по оплате и обслуживанию.</p>
-                <Link
-                to="/service_catalog" className="btn services-button">
-                    Перейти к списку услуг
-                </Link>
             </div>
         </Container>
         </>
