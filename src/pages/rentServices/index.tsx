@@ -13,8 +13,7 @@ export const RentServiceCatalogPage: FC = () => {
         handleSearchClick,
         handleSearchNameChange,
         handlePriceFilterClick,
-        Service_name,
-        price_filter
+        Service_name
     } = useRentServiceCatalogPage();
 
     return (

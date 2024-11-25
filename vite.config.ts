@@ -53,6 +53,11 @@ export default defineConfig({
             changeOrigin: true,
             rewrite: (path) => path.replace(/^\/api/, ""),
         },
+        "/lab1" : {
+            target: "http://localhost:9000",
+            changeOrigin: true,
+            secure: false,
+        }
     },
 },
 });
