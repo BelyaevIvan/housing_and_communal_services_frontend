@@ -12,7 +12,9 @@ export const RentServiceCatalogPage: FC = () => {
         ServiceList,
         handleSearchClick,
         handleSearchNameChange,
-        handlePriceFilterClick
+        handlePriceFilterClick,
+        Service_name,
+        price_filter
     } = useRentServiceCatalogPage();
 
     return (
@@ -29,6 +31,7 @@ export const RentServiceCatalogPage: FC = () => {
                         placeholder="Поиск услуги"
                         aria-label="Поиск услуги"
                         type="text"
+                        value={Service_name}
                     />
                     <Button 
                         onClick={handleSearchClick} 

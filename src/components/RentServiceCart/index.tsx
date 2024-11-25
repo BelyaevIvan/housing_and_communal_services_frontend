@@ -3,7 +3,6 @@ import "./cart_elem.css"
 import { Link } from "react-router-dom";
 
 import { RentServiceProps } from "./typing";
-import { Form } from "react-bootstrap";
 
 export const RentServiceCart: FC <RentServiceProps> = (service : RentServiceProps) => {
     const handleImageError = (event: React.SyntheticEvent<HTMLImageElement>) => {

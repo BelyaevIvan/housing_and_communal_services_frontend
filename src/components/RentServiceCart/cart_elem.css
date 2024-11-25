@@ -34,6 +34,14 @@ button:hover {
     text-overflow: ellipsis;
     white-space: nowrap;
   } */
+.service-card h3 {
+    white-space: normal; /* Позволить тексту занимать несколько строк */
+    line-height: 1.2; /* Настройка межстрочного интервала */
+    max-height: 2.4em; /* Ограничение на 2 строки */
+    overflow: hidden;
+    color: #000; /* Черный цвет текста */
+}
+
 
 .card-bottom{
     display: flex;

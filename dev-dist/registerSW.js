@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) navigator.serviceWorker.register('/Kvartplata_Frontend/dev-sw.js?dev-sw', { scope: '/Kvartplata_Frontend/', type: 'classic' })

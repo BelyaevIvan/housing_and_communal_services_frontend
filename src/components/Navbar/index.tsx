@@ -1,6 +1,8 @@
 import { FC } from "react"
 import "./Navbar.css"
 import { Link } from "react-router-dom";
+import logoImage from "/logo.svg"
+
 export const Navbar: FC = () =>
 {
     return(
@@ -8,7 +10,9 @@ export const Navbar: FC = () =>
         <div className="nav-icons">
             <a href="/rent_services">
             <Link to={"/"}>
-                <img src="http://127.0.0.1:9000/lab1/logo.svg" alt="Меню" />
+                <img 
+                src={ logoImage } 
+                alt="Меню" />
             </Link>
             </a>
         </div>

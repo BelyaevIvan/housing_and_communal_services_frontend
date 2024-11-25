@@ -1,4 +1,4 @@
-.breadcrumb {
+/* .breadcrumb {
     display: flex;
     align-items: center;
     list-style: none;
@@ -15,4 +15,44 @@
     content: "/";
     padding: 0 8px;
     color: gray;
+} */
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap; /* Перенос строк на маленьких экранах */
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-item {
+    position: relative;
+    color: black;
+    white-space: nowrap; /* Запрет переноса текста */
+    overflow: hidden; /* Обрезка текста для адаптива */
+    text-overflow: ellipsis; /* Многоточие, если текст не помещается */
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    padding: 0 8px;
+    color: gray;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .breadcrumb-item {
+        max-width: 100px; /* Ограничение ширины для мобильных */
+    }
+}
+
+/* Стили для больших экранов */
+@media (min-width: 769px) {
+    .breadcrumb-item {
+        max-width: none; /* Убираем ограничение ширины */
+        white-space: normal; /* Разрешаем перенос текста */
+        overflow: visible; /* Полное отображение текста */
+        text-overflow: clip; /* Убираем многоточие */
+    }
 }

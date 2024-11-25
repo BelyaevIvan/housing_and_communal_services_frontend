@@ -35,18 +35,20 @@
 // export default App
 
 // src/App.tsx
-import React from 'react';
 import './App.css';
 import { AppRoutes } from './Routes';
-import MainPage from './pages/mainPage/index';
 import { BrowserRouter } from 'react-router-dom';
+import {Provider} from "react-redux";
+import {store} from "./core/store";
 
 function App() {
   // return <MainPage />;
   return (
-    <BrowserRouter>
-    <AppRoutes />
-    
+    <BrowserRouter basename='/Kvartplata_Frontend'>
+      <Provider store={store}>
+      <AppRoutes />
+      </Provider>
+
     </BrowserRouter>
   )
 }
