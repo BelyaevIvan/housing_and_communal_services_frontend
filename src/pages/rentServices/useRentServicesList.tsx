@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {selectApp} from "../../core/store/slices/selector";
 import {setServiceName} from "../../core/store/slices/appSlice.ts";
 // import {setPriceFilter} from "../../core/store/slices/appSlice.ts";
-
+// fghjkl
 export const useRentServiceCatalogPage = () =>
 {
     const [ServiceList, setServiceList] = useState<RentService[]>([])
