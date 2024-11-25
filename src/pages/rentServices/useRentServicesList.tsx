@@ -5,22 +5,28 @@ import { RentService } from '../../core/mock/RentList';
 import { ServiceList_ } from '../../core/mock/RentList';
 import { getServiceList } from '../../core/api/service_getters';
 
+import { useSelector, useDispatch } from "react-redux";
+import {selectApp} from "../../core/store/slices/selector";
+import {setServiceName} from "../../core/store/slices/appSlice.ts";
+// import {setPriceFilter} from "../../core/store/slices/appSlice.ts";
 
 export const useRentServiceCatalogPage = () =>
 {
     const [ServiceList, setServiceList] = useState<RentService[]>([])
-    const [ServiceName, setServiceName] = useState("")
-    const [priceFilter, setPriceFilter] = useState<string>("");
+    // const [ServiceName, setServiceName] = useState("")
+    // const [priceFilter, setPriceFilter] = useState<string>("");
+    const {Service_name, price_filter} = useSelector(selectApp);
+    const dispatch = useDispatch();
 
     const handleSearchClick = () => {
-        getServiceList(ServiceName)
+        getServiceList(Service_name, Number(price_filter))
         .then((data) =>{
         setServiceList(data.services)
     })
         .catch(() =>
         {
             const filteredservices = ServiceList_.filter((service) => {
-                return service.title.toLowerCase().startsWith(ServiceName.toLowerCase())
+                return service.title.toLowerCase().startsWith(Service_name.toLowerCase())
             })
             setServiceList(filteredservices)
         })
@@ -28,13 +34,14 @@ export const useRentServiceCatalogPage = () =>
 
     const handleSearchNameChange = (e: ChangeEvent) => {
        
-        setServiceName(e.target.value)
+        // setServiceName(e.target.value)
+        dispatch(setServiceName(e.target.value))
     }
 
     const handlePriceFilterClick = () => {
-        setPriceFilter("0"); // Устанавливаем фильтр по цене 0
+        // setPriceFilter("0"); // Устанавливаем фильтр по цене 0
 
-        getServiceList(ServiceName, Number(priceFilter))
+        getServiceList(Service_name, 0)
             .then((data) => {
                 setServiceList(data.services);
             })
@@ -42,7 +49,7 @@ export const useRentServiceCatalogPage = () =>
                 const filteredAndSortedServices = ServiceList_
                 .filter((service) => {
                     // Убираем нечисловые символы из цены и фильтруем
-                    return service.title.toLowerCase().startsWith(ServiceName.toLowerCase())
+                    return service.title.toLowerCase().startsWith(Service_name.toLowerCase())
                 })
                 .sort((a, b) => {
                     // Сортируем по возрастанию цены
@@ -72,6 +79,8 @@ export const useRentServiceCatalogPage = () =>
         ServiceList,
         handleSearchClick,
         handleSearchNameChange,
-        handlePriceFilterClick
+        handlePriceFilterClick,
+        Service_name,
+        price_filter
     }
 }
