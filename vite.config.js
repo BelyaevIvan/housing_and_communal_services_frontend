@@ -18,7 +18,7 @@ export default defineConfig({
         manifest:{
             name: "My Awesome App",
             short_name: "AwesomeApp",
-            start_url: "/Kvartplata_Frontend",
+            // start_url: "/Kvartplata_Frontend",
             display: "standalone",
             background_color: "#ffffff",
             theme_color: "#007bff",
@@ -40,7 +40,7 @@ export default defineConfig({
           }
     })
 ],
-  
+  // base: "/Kvartplata_Frontend", //мой репозиторий
   server: {
     https:{
         key: fs.readFileSync(path.resolve(__dirname, 'cert.key')),

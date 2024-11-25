@@ -40,11 +40,24 @@ import { AppRoutes } from './Routes';
 import { BrowserRouter } from 'react-router-dom';
 import {Provider} from "react-redux";
 import {store} from "./core/store";
+import {useEffect} from "react";
+
+import { invoke } from "@tauri-apps/api/core";
 
 function App() {
-  // return <MainPage />;
+  useEffect(() => {
+    invoke('tauri', {cmd: 'create'})
+        .then((response: any) => console.log(response))
+        .catch((error: any) => console.log(error));
+    return () => {
+        invoke('tauri', {cmd: 'close'})
+            .then((response: any) => console.log(response))
+            .catch((error: any) => console.log(error));
+      }
+  }, []);
+
   return (
-    <BrowserRouter basename='/Kvartplata_Frontend'>
+    <BrowserRouter>
       <Provider store={store}>
       <AppRoutes />
       </Provider>
