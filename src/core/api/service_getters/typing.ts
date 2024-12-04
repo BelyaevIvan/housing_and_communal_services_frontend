@@ -11,5 +11,5 @@ export interface RentService {
 export interface ServiceListResponse {
     services: RentService[];
     draft_order_id: number;
-    shipping_id : number;
+    order_id : number;
 }

@@ -3,4 +3,5 @@ export interface RentServiceProps{
     icon : string;
     title : string;
     price : string;
+    updateCatalogPage : () => void
 }

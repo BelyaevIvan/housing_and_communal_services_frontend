@@ -12,7 +12,7 @@ button:hover {
     background-color: #e67320;
 }
 
-.service-card {
+.service-card1 {
     background-color: #fff;
     border-radius: 30px;
     border: 1px solid #ccc; /* Серая рамка */
@@ -34,7 +34,7 @@ button:hover {
     text-overflow: ellipsis;
     white-space: nowrap;
   } */
-.service-card h3 {
+.service-card1 h3 {
     white-space: normal; /* Позволить тексту занимать несколько строк */
     line-height: 1.2; /* Настройка межстрочного интервала */
     max-height: 2.4em; /* Ограничение на 2 строки */
@@ -43,7 +43,7 @@ button:hover {
 }
 
 
-.card-bottom{
+.card-bottom1{
     display: flex;
     flex-direction: row;
     /* column-gap: 25%; */
@@ -51,13 +51,13 @@ button:hover {
     justify-content: space-between;
 }
 
-.service-icon {
+.service-icon1 {
     width: 70%;
     height: auto;
     margin-bottom: 10px;
 }
 
-.services-button {
+.services-button1 {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #efefed;

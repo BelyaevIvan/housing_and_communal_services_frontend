@@ -25,7 +25,7 @@
 } */
 
 /* Поисковая секция */
-.search-section {
+.search-sectionns {
   display: flex;
   background-color: #fff;
   text-align: center;
@@ -35,7 +35,7 @@
   flex-direction: column;
 }
 
-.search-bar {
+.search-bars {
   width: 100%;
   padding: 10px;
   font-size: 16px;
@@ -49,7 +49,7 @@
   flex-direction: column;
 }
 
-.search-button {
+.search-buttons {
   background-color: white;
   color: black;
   border: 1px solid #333;
@@ -60,7 +60,7 @@
 
 
 /* Секция услуг */
-.services {
+.servicess {
   display: grid;
   /* grid-template-columns: repeat(3, 1fr);  */
   gap: 20px;
@@ -75,19 +75,19 @@
 }
 
 @media (min-width: 1200px) {
-  .services {
+  .servicess {
     grid-template-columns: repeat(3, 1fr); /* 3 карточки в строке */
   }
 }
 
 @media (max-width: 1199px) and (min-width: 768px) {
-  .services {
+  .servicess {
     grid-template-columns: repeat(2, 1fr); /* 2 карточки в строке */
   }
 }
 
 @media (max-width: 767px) {
-  .services {
+  .servicess {
     grid-template-columns: 1fr; /* 1 карточка в строке */
   }
 }
