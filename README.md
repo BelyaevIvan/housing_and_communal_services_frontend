@@ -5,6 +5,7 @@
 Тематика приложения: Расчет Квартплаты
 
 Бэкенд: https://github.com/BelyaevIvan/housing_and_communal_services_backend/
+
 Фронтенд: https://github.com/BelyaevIvan/Kvartplata_Frontend
 
 Беляев Иван, студент группы ИУ5-53Б
