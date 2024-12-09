@@ -76,7 +76,7 @@ export const RentServiceCatalogPage: FC = () => {
                     <Button 
                         onClick={handlePriceFilterClick}
                         className="search-buttons ms-2">
-                        Фильтровать по цене
+                        Сортировать
                     </Button>
                 </div>
 

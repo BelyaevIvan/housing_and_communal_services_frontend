@@ -27,7 +27,10 @@ export const OrderPage: FC = () => {
         handleChangeOrg,
         handleFormClick,
         hadleChangeAddrClick,
-        func
+        func,
+        handleMonthChange,
+        monthName,
+        handleMonthSubmit
     } = useCargoInShippingPage()
 
 
@@ -99,8 +102,27 @@ export const OrderPage: FC = () => {
                 </section>
             
                 <section className="order-services">
+                    <div className="flex-container">
+                    <div>
                     {/* <p className="date">Дата: {{ data.order.order_date|date:"d E Y" }}</p> <!-- Выводим дату заявки --> */}
-                    <p className="date">Дата: {OrderData?.order_date}</p>
+                    <input 
+                        type="text" 
+                        name="address" 
+                        placeholder="Адрес" 
+                        value={monthName}
+                        onChange={handleMonthChange}
+                        className="search-barrr" 
+                        required
+                    />
+                    <button 
+                        type="submit"
+                        className="search-button ms-2"
+                        onClick={handleMonthSubmit}>
+                            Внести месяц
+                    </button>
+                    </div>
+                    <p className="date">Дата: {OrderData?.order_date.split("T")[0]}</p>
+                    </div>
                     {OrderData && OrderData.services.length ? (
                         <>
                         {OrderData.services.map((service : Related, index : number) => {

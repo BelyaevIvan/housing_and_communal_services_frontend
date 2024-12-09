@@ -63,7 +63,7 @@ export const loginUser = createAsyncThunk<
         
         // Проверяем статус ответа
         if (response.status === 201) {
-            alert('Вы авторизованы! На главную...')
+            // alert('Вы авторизованы! На главную...')
         // Если запрос успешен, возвращаем имя пользователя из запроса
         return loginData.email
         } else {
@@ -80,16 +80,16 @@ export const loginUser = createAsyncThunk<
         
         switch (error.response.status) {
             case 400:
-                alert('Неверные данные для входа')
+                // alert('Неверные данные для входа')
             return rejectWithValue('Неверные данные для входа')
             case 401:
-                alert('Неавторизованный доступ')
+                // alert('Неавторизованный доступ')
             return rejectWithValue('Неавторизованный доступ')
             case 404:
-                alert('Пользователь не найден')
+                // alert('Пользователь не найден')
             return rejectWithValue('Пользователь не найден')
             default:
-                alert('Сервер временно недоступен')
+                // alert('Сервер временно недоступен')
             return rejectWithValue('Сервер временно недоступен')
         }
         } else {

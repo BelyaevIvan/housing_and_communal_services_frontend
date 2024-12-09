@@ -1,0 +1,15 @@
+.table th {
+    background-color: #e67320;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table .btn {
+    width: 100%;
+}

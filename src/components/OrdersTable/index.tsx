@@ -2,75 +2,79 @@ import { FC } from "react";
 import { TableProps } from "./typing";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import {Card, Col, Row} from "react-bootstrap";
+import "./OrdersTable.css";
 
-export const OrdersTable : FC  <TableProps> = (props : TableProps) =>{
+export const OrdersTable: FC<TableProps> = (props: TableProps) => {
+
+    const getMonthName = (month: string): string => {
+        let monthh: string;
+    
+        switch (month) {
+            case "01": monthh = "Январь";
+                break;
+            case "02": monthh = "Февраль";
+                break;
+            case "03": monthh = "Март";
+                break;
+            case "04": monthh = "Апрель";
+                break;
+            case "05": monthh = "Май";
+                break;
+            case "06": monthh = "Июнь";
+                break;
+            case "07": monthh = "Июль";
+                break;
+            case "08": monthh = "Август";
+                break;
+            case "09": monthh = "Сентябрь";
+                break;
+            case "10": monthh = "Октябрь";
+                break;
+            case "11": monthh = "Ноябрь";
+                break;
+            case "12": monthh = "Декабрь";
+                break;
+            default: monthh = "Неверный месяц";
+        }
+    
+        return monthh;
+    };
+
     return (
-        <div>
-            <Card className="mb-2">
-                <Card.Body className="py-2 px-3">
-                    <Row className="d-flex align-items-center">
-                        <Col xs={12} sm={2}>
-                            <Card.Text><strong>№</strong></Card.Text>
-                        </Col>
-                        <Col xs={12} sm={2}>
-                            <Card.Text><strong>Статус</strong></Card.Text>
-                        </Col>
-                        <Col xs={12} sm={2}>
-                            <Card.Text><strong>Дата создания</strong></Card.Text>
-                        </Col>
-                        <Col xs={12} sm={2}>
-                            <Card.Text><strong>Дата оформления</strong></Card.Text>
-                        </Col>
-                        <Col xs={12} sm={2}>
-                            <Card.Text><strong>Дата завершения</strong></Card.Text>
-                        </Col>
-                        <Col xs={12} sm={2}>
-                            <Card.Text><strong>Итоговая стоимость</strong></Card.Text>
-                        </Col>
-                    </Row>
-                </Card.Body>
-            </Card>
-            {props.data.map((order) => (
-                <Card key={order.number} className="mb-2">
-                    <Card.Body className="py-2 px-3">
-                        <Row className="d-flex align-items-center">
-                            <Col xs={12} sm={2}>
-                                <Card.Text>
-                                    <Link to={"/order/" + order.number} className={order.number != 0 ? "" : "disabled disable"}>
-                                        {order.number}
-                                    </Link>
-                                </Card.Text>
-                            </Col>
-                            <Col xs={12} sm={2}>
-                                <Card.Text>
-                                    {order.status}
-                                </Card.Text>
-                            </Col>
-                            <Col xs={12} sm={2}>
-                                <Card.Text>
-                                    {order.order_Date}
-                                </Card.Text>
-                            </Col>
-                            <Col xs={12} sm={2}>
-                                <Card.Text>
-                                    {order.formationDate}
-                                </Card.Text>
-                            </Col>
-                            <Col xs={12} sm={2}>
-                                <Card.Text>
-                                    {order.completitionDate}
-                                </Card.Text>
-                            </Col>
-                            <Col xs={12} sm={2}>
-                                <Card.Text>
-                                    {order.total_amount}
-                                </Card.Text>
-                            </Col>
-                        </Row>
-                    </Card.Body>
-                </Card>
-            ))}
-        </div>
-    )
-}
+        <Table striped bordered hover responsive className="custom-table">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Статус</th>
+                    <th>Дата создания</th>
+                    <th>Дата оформления</th>
+                    <th>Дата завершения</th>
+                    <th>Сумма счета</th>
+                    <th>Адрес</th>
+                    <th>Месяц оплаты</th>
+                </tr>
+            </thead>
+            <tbody>
+                {props.data.map((order) => (
+                    <tr key={order.number}>
+                        <td>
+                            <Link
+                                to={"/order/" + order.number}
+                                className={order.number !== 0 ? "" : "disabled disable"}
+                            >
+                                {order.number}
+                            </Link>
+                        </td>
+                        <td>{order.status}</td>
+                        <td>{order.order_Date}</td>
+                        <td>{order.formationDate}</td>
+                        <td>{order.completitionDate}</td>
+                        <td>{order.total_amount}</td>
+                        <td>{order.address}</td>
+                        <td>{getMonthName(order.order_Date.split(".")[1])}</td>
+                    </tr>
+                ))}
+            </tbody>
+        </Table>
+    );
+};

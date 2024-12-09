@@ -15,6 +15,54 @@ export const useCargoInShippingPage = () => {
     const navigate = useNavigate();
     const [total_price, setTotalPrice] = useState<string>("0");
     const [Allow_Edit, setAllow_Edit] = useState<boolean>(true);
+    const [monthName, setMonthName] = useState<string>("");
+
+
+
+    const getMonthName = (month: string): string => {
+        let monthh: string;
+    
+        switch (month) {
+            case "01": monthh = "Январь";
+                break;
+            case "02": monthh = "Февраль";
+                break;
+            case "03": monthh = "Март";
+                break;
+            case "04": monthh = "Апрель";
+                break;
+            case "05": monthh = "Май";
+                break;
+            case "06": monthh = "Июнь";
+                break;
+            case "07": monthh = "Июль";
+                break;
+            case "08": monthh = "Август";
+                break;
+            case "09": monthh = "Сентябрь";
+                break;
+            case "10": monthh = "Октябрь";
+                break;
+            case "11": monthh = "Ноябрь";
+                break;
+            case "12": monthh = "Декабрь";
+                break;
+            default: monthh = "Неверный месяц";
+        }
+    
+        return monthh;
+    };
+
+
+    // Хендлер на изменение текста в поле ввода
+    const handleMonthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setMonthName(e.target.value);  // Обновляем значение monthName
+    };
+    
+    // Хендлер на нажатие кнопки для изменения значения monthName
+    const handleMonthSubmit = () => {
+        alert(monthName)
+    };
 
     /**
      * Проверяет, является ли строка числом с плавающей точкой
@@ -104,6 +152,9 @@ export const useCargoInShippingPage = () => {
                         setAllow_Edit(false);
                     }
                     setAddress(data.data.address);
+                    
+                    const month = data.data.order_date.split("-")[1];
+                    setMonthName(getMonthName(month));
 
                     // Обработка услуг
                     const updatedAmounts: { [key: string]: number } = {};
@@ -157,7 +208,7 @@ export const useCargoInShippingPage = () => {
     
         api.rentOrders.rentOrdersEditUpdate(String(id), updatedOrder)
             .then(() => {
-                alert("Адрес зафиксирован")
+                // alert("Адрес зафиксирован")
                 console.log("Address updated successfully");
                 updPage();
             })
@@ -182,6 +233,12 @@ export const useCargoInShippingPage = () => {
 
     const func = (id: number, currentReading: string | null) => {}
 
+
+    // let month = OrderData!.order_date.split(".")[1];
+
+    
+    
+
     return {
         OrderData,
         id,
@@ -194,6 +251,9 @@ export const useCargoInShippingPage = () => {
         handleChangeOrg,
         handleFormClick,
         hadleChangeAddrClick,
-        func
+        func,
+        handleMonthChange,
+        monthName,
+        handleMonthSubmit
     };
 };

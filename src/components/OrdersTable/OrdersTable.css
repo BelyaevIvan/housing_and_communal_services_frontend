@@ -1,0 +1,15 @@
+.custom-table thead {
+    border: 2px solid #e67320 !important; /* Рамка для шапки */
+    background-color: #e67320 !important; /* Цвет фона */
+    color: #fff !important; /* Цвет текста */
+}
+
+.custom-table thead th {
+    border-color: #e67320 !important; /* Рамка ячеек в шапке */
+    color: #fff !important; /* Цвет текста */
+}
+
+.custom-table tbody tr th,
+.custom-table tbody tr td {
+    border-color: #e67320 !important; /* Цвет рамки для всех ячеек */
+}

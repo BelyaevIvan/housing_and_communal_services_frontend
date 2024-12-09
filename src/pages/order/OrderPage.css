@@ -48,6 +48,20 @@
     align-items: center;
     flex-direction: column;
   }
+
+  .search-barrr {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 20px; /* Закругленные углы */
+    background-color: #f0f0f0; /* Серый фон */
+    text-align: left;
+    max-width: 100px;
+    margin: 7px auto;
+    align-items: center;
+    flex-direction: column;
+  }
   
   .search-button {
     background-color: white;
@@ -74,3 +88,19 @@
     align-items: stretch;
   }
   
+
+  .flex-container {
+    display: flex;
+    justify-content: flex-start; /* Выравнивание по левому краю */
+    flex-direction: row;
+    align-items: center; /* Выравнивание по вертикали */
+    width: 100%; /* Чтобы контейнер занимал всю доступную ширину */
+}
+
+.search-barrr {
+    margin-right: 10px; /* Отступ между полем ввода и кнопкой */
+}
+
+.date {
+    margin-left: auto; /* Перемещает элемент в конец */
+}
