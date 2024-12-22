@@ -104,7 +104,8 @@ export const OrderPage: FC = () => {
                 <section className="order-services">
                     <div className="flex-container">
                     <div>
-                    {/* <p className="date">Дата: {{ data.order.order_date|date:"d E Y" }}</p> <!-- Выводим дату заявки --> */}
+                    {Allow_Edit ? 
+                    <>
                     <input 
                         type="text" 
                         name="address" 
@@ -120,6 +121,12 @@ export const OrderPage: FC = () => {
                         onClick={handleMonthSubmit}>
                             Внести месяц
                     </button>
+                    </>
+                    :
+                    <div>{monthName}</div>
+                }
+                    {/* <p className="date">Дата: {{ data.order.order_date|date:"d E Y" }}</p> <!-- Выводим дату заявки --> */}
+                    
                     </div>
                     <p className="date">Дата: {OrderData?.order_date.split("T")[0]}</p>
                     </div>

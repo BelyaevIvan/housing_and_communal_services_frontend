@@ -41,40 +41,38 @@ export const OrdersTable: FC<TableProps> = (props: TableProps) => {
     };
 
     return (
-        <Table striped bordered hover responsive className="custom-table">
-            <thead>
-                <tr>
-                    <th>№</th>
-                    <th>Статус</th>
-                    <th>Дата создания</th>
-                    <th>Дата оформления</th>
-                    <th>Дата завершения</th>
-                    <th>Сумма счета</th>
-                    <th>Адрес</th>
-                    <th>Месяц оплаты</th>
-                </tr>
-            </thead>
-            <tbody>
+        <>
+        <div className="orderr-card-main">
+                
+                <p className="colorrrrr">№</p>
+                <p className="colorrrrr">Статус</p>
+                <p className="colorrrrr">Дата создания</p>
+                <p className="colorrrrr">Дата оформления</p>
+                <p className="colorrrrr">Дата завершения</p>
+                <p className="colorrrrr">Сумма счета</p>
+                <p className="colorrrrr">Адрес</p>
+                <p className="colorrrrr">Месяц оплаты</p>
+                
+            </div>
                 {props.data.map((order) => (
-                    <tr key={order.number}>
-                        <td>
+                    <div key={order.number} className="orderr-card">
+                        <p>
                             <Link
                                 to={"/order/" + order.number}
                                 className={order.number !== 0 ? "" : "disabled disable"}
                             >
                                 {order.number}
                             </Link>
-                        </td>
-                        <td>{order.status}</td>
-                        <td>{order.order_Date}</td>
-                        <td>{order.formationDate}</td>
-                        <td>{order.completitionDate}</td>
-                        <td>{order.total_amount}</td>
-                        <td>{order.address}</td>
-                        <td>{getMonthName(order.order_Date.split(".")[1])}</td>
-                    </tr>
+                        </p>
+                        <p>{order.status}</p>
+                        <p>{order.order_Date}</p>
+                        <p>{order.formationDate}</p>
+                        <p>{order.completitionDate}</p>
+                        <p>{order.status == "Завершен" || order.status == "Отклонен" ? order.total_amount : ''}</p>
+                        <p>{order.address}</p>
+                        <p>{getMonthName(order.order_Date.split(".")[1])}</p>
+                    </div>
                 ))}
-            </tbody>
-        </Table>
+        </>
     );
 };

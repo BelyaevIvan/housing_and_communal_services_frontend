@@ -13,3 +13,36 @@
 .custom-table tbody tr td {
     border-color: #e67320 !important; /* Цвет рамки для всех ячеек */
 }
+
+.orderr-card {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* Три карточки на строке */
+    background-color: #fff;
+    border-radius: 30px;
+    border: 1px solid #ccc; /* Серая рамка */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    justify-content: space-between; /* Контент растягивается, что позволяет привязать его к низу */
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s ease;
+    margin: 20px;
+}
+
+.orderr-card-main {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* Три карточки на строке */
+    background-color: #e67320; /* Цвет фона */
+    color: white; /* Белый цвет текста */
+    border-radius: 30px;
+    border: 1px solid #ccc; /* Серая рамка */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    justify-content: space-between; /* Контент растягивается, что позволяет привязать его к низу */
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s ease;
+    margin: 20px;
+}
+
+.colorrrrr {
+    color: white; /* Белый цвет текста */
+}

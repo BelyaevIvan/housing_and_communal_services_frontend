@@ -39,14 +39,16 @@ export const RentServiceCatalogPage: FC = () => {
             <Link to={`/order/${Order_id}/`} style={{textDecoration : "None"}} 
             className={Order_id != 0 ? "" : "disabled disable"}>
 
-                <Button className="search-buttons ms-2">
-                    <span className="ms-2">{Number(ItemsInCart)}</span>
+             
+                    
                     {
-                        Number(ItemsInCart) != 0 ? (
-                            <img src={basketImage} alt="cart" />
+                        Number(ItemsInCart) != 0 ? (<>
+                        <Button className="search-buttons ms-2">
+                            <span className="ms-2">{Number(ItemsInCart)}</span>
+                            <img src={basketImage} alt="cart" /> 
+                            </Button></>
                         ) : <div> </div>
                     }
-                </Button>
             {/* корзина = {Number(ItemsInCart)} */}
             </Link>
             :

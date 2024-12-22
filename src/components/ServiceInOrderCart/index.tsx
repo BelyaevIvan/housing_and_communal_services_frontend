@@ -135,7 +135,7 @@ export const ServiceInRequestCard: FC<ServiceInRequestProps> = ({
                                 <input
                                     type="text"
                                     name={`current_reading_${id}`}
-                                    value={currentValue || ""}
+                                    value={currentValue != null && currentValue != undefined ? currentValue : ""}
                                     onChange={handleInputChange}
                                     className="pokaz-bar"
                                     disabled={!isEditable}
@@ -152,9 +152,14 @@ export const ServiceInRequestCard: FC<ServiceInRequestProps> = ({
                             )}
                         </>
                     ) : (
+                        <>
                         <p className="title1">
                             Дата последней оплаты: <span className="qwer">{lastReading}</span>
                         </p>
+                        <p className="title1">
+                        Дата текущей оплаты: <span className="qwer">{currentReading}</span>
+                        </p>
+                        </>
                     )}
                 </div>
             </div>
