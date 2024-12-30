@@ -106,15 +106,27 @@ export const OrderPage: FC = () => {
                     <div>
                     {Allow_Edit ? 
                     <>
-                    <input 
-                        type="text" 
-                        name="address" 
-                        placeholder="Адрес" 
+                    <select
+                        name="month"
                         value={monthName}
                         onChange={handleMonthChange}
-                        className="search-barrr" 
+                        className="search-barrr"
                         required
-                    />
+                    >
+                        <option value="" disabled>Выберите месяц</option>
+                        <option value="January">Январь</option>
+                        <option value="February">Февраль</option>
+                        <option value="March">Март</option>
+                        <option value="April">Апрель</option>
+                        <option value="May">Май</option>
+                        <option value="June">Июнь</option>
+                        <option value="July">Июль</option>
+                        <option value="August">Август</option>
+                        <option value="September">Сентябрь</option>
+                        <option value="October">Октябрь</option>
+                        <option value="November">Ноябрь</option>
+                        <option value="December">Декабрь</option>
+                    </select>
                     <button 
                         type="submit"
                         className="search-button ms-2"

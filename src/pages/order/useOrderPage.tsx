@@ -55,7 +55,7 @@ export const useCargoInShippingPage = () => {
 
 
     // Хендлер на изменение текста в поле ввода
-    const handleMonthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleMonthChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setMonthName(e.target.value);  // Обновляем значение monthName
     };
     
